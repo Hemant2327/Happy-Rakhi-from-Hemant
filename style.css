@@ -674,3 +674,256 @@ footer p { color: var(--text-muted); margin-bottom: 0.4rem; }
 }
 
 
+
+/* ===== 3D RAKHI SHOWCASE ===== */
+#rakhi-showcase {
+  background: radial-gradient(ellipse at center, rgba(192,57,43,0.08) 0%, transparent 70%);
+  overflow: hidden;
+}
+
+.showcase-sub {
+  text-align: center;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-top: -2rem;
+  margin-bottom: 3rem;
+  font-size: 1.05rem;
+}
+
+.rakhi-showcase-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+/* --- 3D Scene --- */
+.rs-scene {
+  perspective: 900px;
+  perspective-origin: 50% 50%;
+  width: 320px;
+  height: 420px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rs-object {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  transform-style: preserve-3d;
+  animation: rs-spin 10s ease-in-out infinite;
+}
+
+@keyframes rs-spin {
+  0%   { transform: rotateY(-25deg) rotateX(15deg) rotateZ(0deg); }
+  25%  { transform: rotateY(15deg)  rotateX(-10deg) rotateZ(3deg); }
+  50%  { transform: rotateY(25deg)  rotateX(15deg)  rotateZ(0deg); }
+  75%  { transform: rotateY(-15deg) rotateX(-10deg) rotateZ(-3deg); }
+  100% { transform: rotateY(-25deg) rotateX(15deg)  rotateZ(0deg); }
+}
+
+/* Back glow disc */
+.rs-glow-disc {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 280px; height: 280px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) translateZ(-20px);
+  background: radial-gradient(circle, rgba(255,107,0,0.35) 0%, rgba(255,215,0,0.15) 40%, transparent 70%);
+  filter: blur(18px);
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+@keyframes glow-pulse {
+  0%,100% { opacity: 0.7; transform: translate(-50%,-50%) translateZ(-20px) scale(1);   }
+  50%      { opacity: 1.0; transform: translate(-50%,-50%) translateZ(-20px) scale(1.1); }
+}
+
+/* Outer decorative ring */
+.rs-outer-ring {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 230px; height: 230px;
+  border-radius: 50%;
+  border: 6px solid transparent;
+  background:
+    linear-gradient(var(--dark-bg), var(--dark-bg)) padding-box,
+    conic-gradient(#FFD700, #FF6B00, #C0392B, #FF6B00, #FFD700) border-box;
+  transform: translate(-50%, -50%) translateZ(2px);
+  box-shadow: 0 0 30px rgba(255,215,0,0.25), 0 0 60px rgba(255,107,0,0.1);
+}
+
+/* Gems on outer ring */
+.rs-ring-gem {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff 0%, #FFD700 50%, #FF6B00 100%);
+  box-shadow: 0 0 10px rgba(255,215,0,0.9), 0 0 20px rgba(255,107,0,0.5);
+  transform-origin: 0 0;
+  transform: rotate(calc(var(--rg) * 45deg)) translate(108px, -50%);
+}
+
+/* Petals */
+.rs-petals {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 0; height: 0;
+  transform: translate(0,0) translateZ(8px);
+}
+.rs-petal {
+  position: absolute;
+  width: 28px;
+  height: 52px;
+  border-radius: 50% 50% 40% 40% / 60% 60% 40% 40%;
+  background: radial-gradient(ellipse at 30% 30%, rgba(255,255,255,0.4), var(--pc) 60%, rgba(0,0,0,0.3));
+  transform-origin: 0 0;
+  transform: rotate(calc(var(--p) * 30deg)) translateX(65px) translateY(-50%);
+  box-shadow: inset 0 -4px 8px rgba(0,0,0,0.25), 0 4px 12px rgba(0,0,0,0.2);
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+  animation: petal-breathe 3s ease-in-out infinite;
+  animation-delay: calc(var(--p) * 0.1s);
+}
+@keyframes petal-breathe {
+  0%,100% { transform: rotate(calc(var(--p) * 30deg)) translateX(65px) translateY(-50%) scaleY(1); }
+  50%      { transform: rotate(calc(var(--p) * 30deg)) translateX(68px) translateY(-50%) scaleY(1.06); }
+}
+
+/* Inner ring */
+.rs-inner-ring {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 100px; height: 100px;
+  border-radius: 50%;
+  border: 4px solid rgba(255,215,0,0.7);
+  transform: translate(-50%, -50%) translateZ(12px);
+  box-shadow:
+    0 0 15px rgba(255,215,0,0.5),
+    inset 0 0 15px rgba(255,107,0,0.2);
+}
+
+/* Centre jewel */
+.rs-center {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 70px; height: 70px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) translateZ(20px);
+  background: radial-gradient(circle at 35% 35%,
+    #fff 0%,
+    #FFD700 25%,
+    #FF6B00 55%,
+    #C0392B 80%,
+    #7B0A0A 100%);
+  box-shadow:
+    0 0 20px rgba(255,215,0,0.8),
+    0 0 40px rgba(255,107,0,0.5),
+    0 0 70px rgba(192,57,43,0.3),
+    inset 0 3px 8px rgba(255,255,255,0.4);
+  animation: jewel-pulse 2.5s ease-in-out infinite;
+}
+@keyframes jewel-pulse {
+  0%,100% { box-shadow: 0 0 20px rgba(255,215,0,0.8), 0 0 40px rgba(255,107,0,0.5), 0 0 70px rgba(192,57,43,0.3), inset 0 3px 8px rgba(255,255,255,0.4); }
+  50%      { box-shadow: 0 0 35px rgba(255,215,0,1.0), 0 0 65px rgba(255,107,0,0.8), 0 0 100px rgba(192,57,43,0.5), inset 0 3px 8px rgba(255,255,255,0.6); }
+}
+
+.rs-jewel {
+  position: absolute;
+  top: 20%; left: 22%;
+  width: 28px; height: 18px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.55);
+  filter: blur(4px);
+  transform: rotate(-30deg);
+}
+
+.rs-jewel-glow {
+  position: absolute;
+  inset: -10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,215,0,0.4) 0%, transparent 70%);
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+/* Threads */
+.rs-threads {
+  position: absolute;
+  bottom: -80px;
+  left: 50%;
+  transform: translateX(-50%) translateZ(5px);
+  display: flex;
+  gap: 6px;
+  align-items: flex-start;
+}
+
+.rs-thread {
+  width: 5px;
+  border-radius: 3px;
+  animation: thread-sway 3s ease-in-out infinite;
+}
+.t1 { height: 80px; background: linear-gradient(to bottom, #FFD700, rgba(255,215,0,0.1)); animation-delay: 0s; }
+.t2 { height: 95px; background: linear-gradient(to bottom, #C0392B, rgba(192,57,43,0.1)); animation-delay: 0.3s; }
+.t3 { height: 75px; background: linear-gradient(to bottom, #FF6B00, rgba(255,107,0,0.1)); animation-delay: 0.6s; }
+.t4 { height: 88px; background: linear-gradient(to bottom, #FFD700, rgba(255,215,0,0.1)); animation-delay: 0.9s; }
+
+@keyframes thread-sway {
+  0%,100% { transform: skewX(0deg);  }
+  33%      { transform: skewX(4deg);  }
+  66%      { transform: skewX(-4deg); }
+}
+
+.rs-knot {
+  position: absolute;
+  top: -6px; left: 50%;
+  transform: translateX(-50%);
+  width: 28px; height: 12px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, #FFD700, #FF6B00);
+  box-shadow: 0 0 8px rgba(255,215,0,0.6);
+}
+
+/* --- Info Cards beside Rakhi --- */
+.rs-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  max-width: 340px;
+}
+
+.rs-info-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.2rem 1.4rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.rs-info-card:hover {
+  transform: translateX(6px);
+  box-shadow: 0 8px 30px rgba(255,107,0,0.15);
+}
+.rs-info-icon {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 6px rgba(255,215,0,0.4));
+}
+.rs-info-card h4 {
+  font-family: 'Playfair Display', serif;
+  color: var(--gold);
+  margin-bottom: 0.3rem;
+  font-size: 1.05rem;
+}
+.rs-info-card p {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .rakhi-showcase-wrap { flex-direction: column; gap: 2rem; }
+  .rs-info { max-width: 100%; }
+  .rs-scene { width: 260px; height: 340px; }
+}

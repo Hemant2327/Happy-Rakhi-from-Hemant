@@ -261,3 +261,25 @@ function initParallax() {
     }
   });
 })();
+
+// ── 3D RAKHI SHOWCASE MOUSE TILT ─────────────────────────────
+(function initRakhiShowcase() {
+  const scene = document.querySelector('.rs-scene');
+  const obj   = document.querySelector('.rs-object');
+  if (!scene || !obj) return;
+
+  scene.addEventListener('mousemove', e => {
+    const rect = scene.getBoundingClientRect();
+    const cx = rect.left + rect.width  / 2;
+    const cy = rect.top  + rect.height / 2;
+    const rx =  ((e.clientY - cy) / (rect.height / 2)) * 22;
+    const ry = -((e.clientX - cx) / (rect.width  / 2)) * 28;
+    obj.style.animation = 'none';
+    obj.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)`;
+  });
+
+  scene.addEventListener('mouseleave', () => {
+    obj.style.animation = '';
+    obj.style.transform = '';
+  });
+})();
