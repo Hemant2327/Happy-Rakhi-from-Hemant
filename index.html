@@ -1,0 +1,243 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rakshabandhan — Festival of Bond</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <canvas id="bg-canvas"></canvas>
+
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="rakhi-spinner">
+        <div class="petal" style="--i:0"></div>
+        <div class="petal" style="--i:1"></div>
+        <div class="petal" style="--i:2"></div>
+        <div class="petal" style="--i:3"></div>
+        <div class="petal" style="--i:4"></div>
+        <div class="petal" style="--i:5"></div>
+        <div class="petal" style="--i:6"></div>
+        <div class="petal" style="--i:7"></div>
+      </div>
+      <p class="loader-text">रक्षाबंधन</p>
+    </div>
+  </div>
+
+  <nav id="navbar">
+    <div class="nav-logo">🪢 Rakshabandhan</div>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#ritual">Ritual</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#wishes">Wishes</a></li>
+    </ul>
+  </nav>
+
+  <section id="hero">
+    <div class="hero-content">
+      <p class="hero-subtitle reveal">The Sacred Thread of Love</p>
+      <h1 class="hero-title reveal">
+        <span class="gradient-text">रक्षाबंधन</span>
+        <br/>
+        <span>Rakshabandhan</span>
+      </h1>
+      <p class="hero-tagline reveal">A bond woven in love, sealed for eternity</p>
+      <a href="#about" class="hero-cta reveal">Celebrate the Bond</a>
+    </div>
+
+    <div class="rakhi-3d-wrap" id="rakhi3d">
+      <div class="rakhi-3d">
+        <div class="rakhi-face rakhi-front">
+          <div class="rakhi-center"></div>
+          <div class="rakhi-ring"></div>
+          <div class="rakhi-thread left"></div>
+          <div class="rakhi-thread right"></div>
+          <div class="petal-wrap">
+            <span class="r-petal" style="--n:0"></span>
+            <span class="r-petal" style="--n:1"></span>
+            <span class="r-petal" style="--n:2"></span>
+            <span class="r-petal" style="--n:3"></span>
+            <span class="r-petal" style="--n:4"></span>
+            <span class="r-petal" style="--n:5"></span>
+            <span class="r-petal" style="--n:6"></span>
+            <span class="r-petal" style="--n:7"></span>
+          </div>
+        </div>
+        <div class="rakhi-face rakhi-back">
+          <div class="rakhi-center"></div>
+          <div class="rakhi-ring"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="petals-container" id="petals"></div>
+  </section>
+
+  <section id="about">
+    <div class="section-inner">
+      <h2 class="section-title reveal">What is <span class="gradient-text">Rakshabandhan?</span></h2>
+      <div class="about-grid">
+        <div class="about-card glass reveal" data-delay="0">
+          <div class="card-icon">🪢</div>
+          <h3>The Sacred Thread</h3>
+          <p>Raksha Bandhan, meaning "the knot of protection," is a Hindu festival celebrating the eternal bond between brothers and sisters. Sisters tie a sacred thread — the Rakhi — on their brother's wrist as a symbol of love and protection.</p>
+        </div>
+        <div class="about-card glass reveal" data-delay="100">
+          <div class="card-icon">📅</div>
+          <h3>When Is It?</h3>
+          <p>Celebrated on the full moon day (Purnima) of the Hindu month of Shravana, typically falling in August. The day begins with morning prayers and culminates in joyous family celebrations.</p>
+        </div>
+        <div class="about-card glass reveal" data-delay="200">
+          <div class="card-icon">🪔</div>
+          <h3>Beyond Siblings</h3>
+          <p>The festival transcends bloodlines — cousins, friends, and even citizens tie rakhis to express bonds of care and mutual protection. It is a celebration of every relationship anchored in unconditional love.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ritual">
+    <div class="section-inner">
+      <h2 class="section-title reveal">The <span class="gradient-text">Sacred Ritual</span></h2>
+      <div class="timeline">
+        <div class="timeline-item reveal" data-delay="0">
+          <div class="timeline-icon">🛁</div>
+          <div class="timeline-content glass">
+            <h3>Preparation and Bath</h3>
+            <p>Both siblings bathe and wear new or traditional clothes. The sister prepares the Puja thali with all essentials.</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal" data-delay="100">
+          <div class="timeline-icon">🪔</div>
+          <div class="timeline-content glass">
+            <h3>Puja Thali</h3>
+            <p>The thali holds Rakhi, roli, chawal, diya, sweets, and fruits — each item holding deep symbolic meaning.</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal" data-delay="200">
+          <div class="timeline-icon">🌊</div>
+          <div class="timeline-content glass">
+            <h3>Aarti and Tilak</h3>
+            <p>The sister performs aarti and applies a tilak of roli and chawal on the brother's forehead, praying for his long life.</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal" data-delay="300">
+          <div class="timeline-icon">🪢</div>
+          <div class="timeline-content glass">
+            <h3>Tying the Rakhi</h3>
+            <p>The sacred Rakhi is tied around the brother's right wrist while prayers are chanted — the centrepiece of the festival.</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal" data-delay="400">
+          <div class="timeline-icon">🍬</div>
+          <div class="timeline-content glass">
+            <h3>Exchange of Sweets</h3>
+            <p>Sweets are exchanged between siblings. The brother gives a gift as a token of love and promise of protection.</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal" data-delay="500">
+          <div class="timeline-icon">🎁</div>
+          <div class="timeline-content glass">
+            <h3>Gifts and Blessings</h3>
+            <p>The celebration continues with family feasts, exchange of gifts, and heartfelt blessings.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="section-inner">
+      <h2 class="section-title reveal">Festival <span class="gradient-text">Gallery</span></h2>
+      <div class="gallery-grid">
+        <div class="gallery-card glass reveal" data-delay="0">
+          <div class="gallery-visual gv-1"><div class="emoji-art">🪢🌸🪢</div></div>
+          <p>Beautiful Rakhis</p>
+        </div>
+        <div class="gallery-card glass reveal" data-delay="100">
+          <div class="gallery-visual gv-2"><div class="emoji-art">🪔✨🪔</div></div>
+          <p>Puja Thali</p>
+        </div>
+        <div class="gallery-card glass reveal" data-delay="200">
+          <div class="gallery-visual gv-3"><div class="emoji-art">🌺🌼🌺</div></div>
+          <p>Flower Decorations</p>
+        </div>
+        <div class="gallery-card glass reveal" data-delay="300">
+          <div class="gallery-visual gv-4"><div class="emoji-art">🍬🎂🍬</div></div>
+          <p>Festive Sweets</p>
+        </div>
+        <div class="gallery-card glass reveal" data-delay="400">
+          <div class="gallery-visual gv-5"><div class="emoji-art">👫💛👫</div></div>
+          <p>Sibling Bond</p>
+        </div>
+        <div class="gallery-card glass reveal" data-delay="500">
+          <div class="gallery-visual gv-6"><div class="emoji-art">🎁🌟🎁</div></div>
+          <p>Gift Exchange</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="wishes">
+    <div class="section-inner">
+      <h2 class="section-title reveal">Send Your <span class="gradient-text">Wishes</span></h2>
+      <div class="wishes-carousel">
+        <div class="wish-card glass active">
+          <div class="wish-quote">&ldquo;</div>
+          <p>A rakhi is not just a thread — it is the warmth of countless memories, the promise of unwavering support, and the language of love that words can never fully express.</p>
+          <span>— A Sister's Heart</span>
+        </div>
+        <div class="wish-card glass">
+          <div class="wish-quote">&ldquo;</div>
+          <p>May this Raksha Bandhan strengthen the bond that unites us. May the thread remind you that I will always be by your side, through every storm and sunshine.</p>
+          <span>— A Brother's Promise</span>
+        </div>
+        <div class="wish-card glass">
+          <div class="wish-quote">&ldquo;</div>
+          <p>On this auspicious day, I tie this sacred thread as a symbol of my love. May you always be blessed with health, happiness, and success.</p>
+          <span>— Festival Blessing</span>
+        </div>
+      </div>
+      <div class="wish-dots">
+        <span class="dot active" data-idx="0"></span>
+        <span class="dot" data-idx="1"></span>
+        <span class="dot" data-idx="2"></span>
+      </div>
+      <div class="wish-generator glass reveal">
+        <h3>🪢 Generate Your Personal Wish</h3>
+        <div class="wish-gen-form">
+          <input type="text" id="senderName" placeholder="Your name (e.g., Priya)" maxlength="20" />
+          <input type="text" id="receiverName" placeholder="Sibling name (e.g., Rahul)" maxlength="20" />
+          <select id="wishType">
+            <option value="sister">From Sister to Brother</option>
+            <option value="brother">From Brother to Sister</option>
+          </select>
+          <button id="generateWish">Generate Wish</button>
+        </div>
+        <div id="generatedWish" class="generated-wish hidden"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-rakhi">🪢</div>
+      <h3>Happy Rakshabandhan</h3>
+      <p>May the bond between siblings be as eternal as the stars above.</p>
+      <p class="footer-devo">रक्षाबंधन की हार्दिक शुभकामनाएं</p>
+      <div class="footer-divider"></div>
+      <p class="footer-copy">Made with love &middot; Celebrate Every Bond</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
